@@ -1,8 +1,22 @@
-/*
-	Developed by Robert Nyman, http://www.robertnyman.com
-	Code/licensing: http://code.google.com/p/getelementsbyclassname/
-*/
+/* base interface */
 define([], function() {
+	var print = function(value) {
+		document.write(value);
+	}
+	var println = function(value) {
+		print(value + "<br/>");
+	}
+	var addEvent = document.addEventListener ? function(elem, event, listener, useCapture) {
+		elem.addEventListener(event, listener, useCapture);
+	} : function(elem, event, listener) {
+		elem.attachEvent('on' + event, listener, useCapture);
+	}
+	var delEvent = document.removeEventListener ? function(elem, event, listener, useCapture) {
+		elem.removeEventListener(event, listener, useCapture);
+	} : function(elem, event, listener) {
+		elem.detachEvent('on' + event, listener, useCapture);
+	}
+
 	var getElementsByClassName = function(className, tag, elm) {
 		if (document.getElementsByClassName) {
 			getElementsByClassName = function(className, tag, elm) {
@@ -74,11 +88,48 @@ define([], function() {
 		}
 		return getElementsByClassName(className, tag, elm);
 	};
-	function popup(winURL){
-		window.open(winURL,"popup","width=320,height=480");
+
+	function popup(winURL) {
+		window.open(winURL, "popup", "width=320,height=480");
 	}
+
+	function insertAfter(newElement, targetElement) {
+		var parent = targetElement.parentNode;
+		if (targetElement === parent.lastChild) {
+			parent.appendChild(newElement);
+		} else {
+			parent.insertBefore(newElement, targetElement.nextSibling);
+		}
+	}
+
+	/* AJAX */
+	function getHTTPObject(){
+		if(typeof XMLHttpRequest===undefined)
+		{
+			try{
+				return new ActiveXObject("Msxml2.XMLHTTP.6.0");
+			}catch(e){
+				//TODO handle the exception
+			}
+			try{
+				return new ActiveXObject("Msxml2.XMLHTTP.3.0");				
+			}catch(e){
+				//TODO handle the exception
+			}
+			try{
+				return new ActiveXObject();
+			}catch(e){
+				//TODO handle the exception
+			}
+		}
+		var xhr=new XMLHttpRequest();
+		return xhr;
+	}
+
 	return {
 		getElementsByClassName: getElementsByClassName,
-		popup:popup
+		popup: popup,
+		insertAfter: insertAfter,
+		getHTTPObject:getHTTPObject
 	}
 })
