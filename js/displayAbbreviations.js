@@ -1,10 +1,11 @@
 require.config({
 	baseUrl:"../js",
 	paths:{
-		"base":"base"
+		"base":"base",
+		"content":"content"
 	}
 });
-require(["base"],function(base){
+require(["content"],function(content){
 	var abbrs=document.getElementsByTagName("abbr");
 	if(abbrs.length<1) return false;
 	abbrs=Array.prototype.slice.call(abbrs);
@@ -15,17 +16,34 @@ require(["base"],function(base){
 	dlContainer.appendChild(header);
 	dlContainer.appendChild(abbrDl);
 	document.body.appendChild(dlContainer);
-	function addAbbr(abbr){
-		var titleText=abbr.getAttribute("title");
-		var abbrText=abbr.innerHTML;
-		var dt=document.createElement("dt");
-		var dd=document.createElement("dd");
-		dt.innerHTML=abbrText;
-		dd.innerHTML=titleText;
-		abbrDl.appendChild(dt);
-		abbrDl.appendChild(dd);
-	}
 	abbrs.forEach(function(item){
-		addAbbr(item);
+		content.addAbbr(item,abbrDl);
+	})
+	
+})
+require(["content"],function(content){
+	var quotes	=document.getElementsByTagName("blockquote");
+	if(quotes.length<1) return;
+	quotes=Array.prototype.slice.call(quotes);
+	quotes.forEach(function(item){
+	quotes=Array.prototype.slice.call(quotes);
+		content.displayCitations(item);
 	})
 })
+require(["base","content"],function(base,content){
+	var linkList=document.getElementsByTagName("a");
+	if(linkList.length<1) return;
+	var accessKeyLinkList=[];
+	for(var i=0,len=linkList.length;i<len;i++)
+	{
+		if(!linkList[i].getAttribute("accesskey")) continue;
+		accessKeyLinkList.push(linkList[i]);
+	}
+	var ul=document.createElement("ul");
+	document.body.appendChild(ul);
+	accessKeyLinkList.forEach(function(item){
+	 	content.displayAccessKey(item,ul);
+	})
+})
+
+
