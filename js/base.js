@@ -125,6 +125,25 @@ define([], function() {
 		var xhr=new XMLHttpRequest();
 		return xhr;
 	}
+	
+	function nextElementSibling(ele){
+		if(ele.nextElementSibling) return ele.nextElementSibling;
+		if(ele.nextSibling.nodeType===1) return ele.nextSibling;
+		if(ele.nextSibling) return nextElementSibling(ele.nextSibling);
+		return null;
+	}
+	
+	function addClass(ele,value){
+		if(!ele.className)
+		{
+			ele.className=value;
+		}
+		else
+		{
+			ele.className+=" value";
+		}
+		
+	}
 
 	return {
 		getElementsByClassName: getElementsByClassName,
