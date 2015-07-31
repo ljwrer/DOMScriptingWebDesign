@@ -52,13 +52,38 @@ table {
 	left: 0;
 	top: 0;
 	right: 0;
-	height:200px;
-	background: yellow;
+	height:245px;
+	margin: 0 100px;
 }
 
 .g-header .logo{
 	float: left;
 	height: 100%;
 	width: 400px;
-	background: url(../img/logo_zero.jpg) center;
+	margin-right: 50px;
+	background: url(../img/logo_zero.jpg);
+}
+.g-nav{
+	position: absolute;
+	left: 0;
+	right: 0;
+	top: 245px;
+	height: 40px;
+	margin: 0 100px;
+	background-color: deepskyblue;
+}
+.g-content{
+	position: absolute;
+	top: 285px;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	margin: 0 100px;
+	background: dodgerblue;
+}
+
+.g-content .m-logo-icon{
+	overflow: hidden;
+	background: gray;
+	
 }
