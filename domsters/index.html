@@ -1,36 +1,45 @@
 <!DOCTYPE html>
 <html>
+
 	<head>
 		<meta charset="utf-8">
 		<title></title>
 		<link rel="stylesheet" href="../css/main.css" />
+		<link rel="stylesheet" href="../css/js.css" />
+		<script type="text/javascript" src="../js/require.js" data-main= "../js/indexMain.js"></script>
 	</head>
+
 	<body>
 		<header class="g-header">
 			<div class="logo"></div>
 			<div class="m-logo-icon">
-				<img src="../img/Lloyd_icon.jpg"/>
-				<img src="../img/Elie_icon.jpg"/>
-				<img src="../img/Randy_icon.jpg"/>
-				<img src="../img/Tio_icon.jpg"/>
-				<img src="../img/Renne_icon.jpg" />
+				<img class="j-visible" src="../img/Lloyd_icon.png" />
 			</div>
 		</header>
 		<nav class="g-nav">
 			<ul>
-				<li></li>
-				<li></li>
-				<li></li>
-				<li></li>
-				<li></li>
+				<li><a href="index.html" data-item ="1">Home</a></li>
+				<li><a href="about.html" data-item ="2">About</a></li>
+				<li><a href="photos.html" data-item ="3">Photos</a></li>
+				<li><a href="live.html" data-item ="4">Live</a></li>
+				<li><a href="contact.html" data-item ="5">Contact</a></li>
 			</ul>
 		</nav>
 		<article class="g-content">
-			<div></div>
-			<div></div>
-			<div></div>
-			<div></div>
-			<div></div>
+				<div class="home j-visible">
+					<h1>Welcome</h1>
+					<p id="intro">Welcome to the official website of Jay Skript and the Domsters. Here, you can <a href="about.html" data-item ="2">learn more about the band</a>, view <a href="photos.html" data-item ="3">photos of the band</a>, find out about <a href="live.html" data-item ="4">tour dates</a> and <a href="contact.html" data-item ="5">get in touch with the band</a>.</p>
+					<div class="m-slider">
+						<div class="view">
+							<img src="../img/Lloyd_icon.png" />
+							<img src="../img/Elie_icon.jpg" />
+							<img src="../img/Randy_icon.jpg" />
+							<img src="../img/Tio_icon.jpg" />
+							<img src="../img/Renne_icon.jpg" />
+						</div>
+					</div>
+				</div>
 		</article>
 	</body>
+
 </html>

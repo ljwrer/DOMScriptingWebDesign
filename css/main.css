@@ -47,6 +47,14 @@ table {
 	border-spacing: 0;
 }
 
+html,body,.container{
+    height: 100%;
+    overflow: hidden;
+}
+
+body{
+	background: url(../img/bg2.jpg) ;
+}
 .g-header{
 	position: absolute;
 	left: 0;
@@ -54,14 +62,14 @@ table {
 	right: 0;
 	height:245px;
 	margin: 0 100px;
+	overflow: hidden;
 }
 
 .g-header .logo{
 	float: left;
 	height: 100%;
-	width: 400px;
-	margin-right: 50px;
-	background: url(../img/logo_zero.jpg);
+	width: 500px;
+	background: url(../img/logo_zero.png) no-repeat;
 }
 .g-nav{
 	position: absolute;
@@ -70,7 +78,7 @@ table {
 	top: 245px;
 	height: 40px;
 	margin: 0 100px;
-	background-color: deepskyblue;
+	background-color: rgba(0,191,255,0.2);
 }
 .g-content{
 	position: absolute;
@@ -78,12 +86,135 @@ table {
 	left: 0;
 	right: 0;
 	bottom: 0;
+	overflow: auto;
 	margin: 0 100px;
-	background: dodgerblue;
+	background: rgba(30,144,255,0.6);
+	min-width: 500px;
+	min-height: 500px;
 }
 
-.g-content .m-logo-icon{
+.g-header .m-logo-icon{
 	overflow: hidden;
-	background: gray;
+	height: 140px;
+	min-width: 140px;
+	margin-top: 50px;
+	margin-right: 100px;
+	color: blue;
+}
+
+.g-header .m-logo-icon img{
+	display: none;
+	overflow: hidden;
+	height: 140px;
+	width: 140px;
+	float: right;
+}
+.g-nav ul{
+	display: flex;
+	justify-content: space-between;
+	height: 100%;
+	align-items: stretch;
+}
+.g-nav li{
+	display: flex; justify-content: center; align-items: center;
+	flex: 1;
+}
+.g-nav a{
+	font: 14px "microsoft yahei";
+}
+.g-content .home h1{
+	margin-left: 50px;
+	margin-top: 25px;
+	font: 28px arial;
+}
+.g-content .home p{
+	margin:25px 50px;
+}
+.g-content .m-slider{
+	left: 50px;
+	position: absolute;
+	bottom: 50px;
+	height: 140px;
+	width: 140px;
+	overflow: hidden;
+}
+.m-slider .view{
+	position: relative;
+	width: 800px;
+	height: 100%;
+	left: 0px;
+}
+.m-slider img{
+	display: inline-block;
+	float: left;
+}
+
+/* about页面  */
+.g-content .about
+{
+	margin:50px;
+	font:14px "microsoft sans serif" "微软雅黑";
+}
+
+.g-content .about h1{
+	font-size: 20px;
+}
+.g-content .about h2{
+	font-size: 18px;
+}
+.g-content .about ul{
+	font-size: 16px;
 	
 }
+.g-content .about a{
+	text-decoration: none;
+}
+.g-content .about section{
+	margin-top: 20px;
+}
+.g-content .about p{
+	text-indent: 2em;
+}
+.g-content .about section{
+	display: none;
+}
+
+/* photos页面  */
+.g-content .photos{
+	margin:50px;
+	font:18px "microsoft sans serif" "微软雅黑";
+}
+.g-content .photos ul{
+	overflow: hidden;
+}
+.g-content .photos li{
+	display: inline-block;
+	float: left;
+}
+.g-content .photos li img{
+	height: 100px;
+	margin: 5px;
+}
+.g-content .photos section img{
+	border: 5px solid rgba(255,255,255,0.5);
+	height: 350px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

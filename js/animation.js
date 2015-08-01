@@ -13,8 +13,8 @@ define([], function() {
 		}
 
 		function step() {
-			var currentX = parseInt(ele.style.left);
-			var currentY = parseInt(ele.style.top);
+			var currentX = parseInt(window.getComputedStyle(ele).left);
+			var currentY = parseInt(window.getComputedStyle(ele).top);
 			var dist = 0
 			if (currentX === finalX && currentY === finalY) {
 				clearInterval(intervelID);
