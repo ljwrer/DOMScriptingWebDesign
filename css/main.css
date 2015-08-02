@@ -199,11 +199,53 @@ body{
 	border: 5px solid rgba(255,255,255,0.5);
 	height: 350px;
 }
+.g-content .live {
+	font:18px "microsoft sans serif" "微软雅黑";
+	/*margin: 50px auto;*/
+	display: flex;
+	align-items: center;
+	flex-direction: column;
+	/*width: 500px;*/
+}
+.g-content .live h1{
+	font-size: 24px;
+}
 
-
-
-
-
+.g-content .live table,.g-content .live th,.g-content .live td{
+	border: 2px solid darkslategray;
+}
+.g-content .live th,.g-content .live td{
+	height: 50px;
+	width:150px;
+	line-height: 50px;
+	text-align: center;
+}
+.g-content .live th{
+	background-color: rgba(69,139,0,0.8);
+}
+.g-content .live tr:nth-child(2n+1){
+	background-color: rgba(70,130,180,0.5);
+}
+.g-content .live tr:nth-child(2n){
+	background-color: rgba(185,125,75,0.5);
+}
+.g-content .live tbody tr:hover{
+	background: rgba(139,115,85,1);
+}
+.g-content .contact {
+	font:18px "microsoft sans serif" "微软雅黑";
+	margin: 50px;
+}
+.g-content .contact h1{
+	font-size: 24px;
+}
+.g-content .contact input{
+	width: 200px;
+}
+.g-content .contact textarea{
+	width: 400px;
+	height: 250px;
+}
 
 
 
